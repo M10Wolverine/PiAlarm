@@ -11,21 +11,26 @@ GPIO.setup(23, GPIO.OUT)
 GPIO.setup(25, GPIO.IN)
 
 
-alarmTime = datetime.time(hour = 11, minute = 13, second=0, microsecond=0)
+alarmTime = datetime.time(hour = 11, minute = 29, second=0, microsecond=0)
 
-##GPIO.output(18, True)
-##time.sleep(1)
-##GPIO.output(18, False)
+isTime=0
 
 while True:
-    now = datetime.datetime.now().time()
-    
-    if GPIO.input(25)==True or now >= alarmTime: 
+        now=datetime.datetime.now().time()
+        if now >=alarmTime:
+                isTime=1
+                break
+
+if isTime==1:
+    if now >= alarmTime: 
         GPIO.output(18, True)
         GPIO.output(23, True)
-    else:
-        GPIO.output(18, False)
-        GPIO.output(23, False)
+        
+while True:
+        if GPIO.input(25):
+                GPIO.output(18, False)
+                GPIO.output(23, False)
+                break;
         
         
 
