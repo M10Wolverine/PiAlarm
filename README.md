@@ -1,5 +1,5 @@
 # PiAlarm
-##Currently on hiatus## 
+##Currently on hiatus until summer## 
 
 Code for a morning alarm system to replace a typical audio alarm clock. 
 The Pi gradually turns on the lights leading up to the wake up time to try to simulate sunrise.
